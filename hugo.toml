@@ -1,0 +1,4 @@
+baseURL = 'https://arshadnadeem.gifts'
+languageCode = 'en-us'
+title = 'Arshad Nadeem Gift Counter'
+theme = "hugo-theme-console"

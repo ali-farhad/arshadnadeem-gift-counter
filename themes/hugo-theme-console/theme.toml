@@ -1,0 +1,12 @@
+name = "Arshad Nadeem Gift Counter"
+license = "Private"
+licenselink = "NA"
+description = "Welcome to Arshad Nadeem’s Triumphs - Dive into the remarkable journey of Arshad Nadeem, Pakistan’s Olympic gold medalist in javelin throw at the Paris 2024 Olympics. Our website meticulously tracks and showcases the array of gifts, cash prizes, and honors bestowed upon this national hero for his historic achievement."
+
+tags = ["Arshad Nadeem", "Olympic gold medalist", "javelin throw", "Paris 2024 Olympics", "rewards", "cash prizes", "gifts", "honors", "Pakistan sports hero", "interactive timeline", "exclusive stories", "community engagement", "national pride", "sports achievements", "athlete recognition", "Olympic triumph", "sports awards", "luxury car", "civil awards", "sports stadium"]
+
+
+[author]
+    name = "Ali Farhad"
+    homepage = "https://alifarhad.dev"
+    github = "https://github.com/ali-farhad"

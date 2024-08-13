@@ -1,0 +1,138 @@
+{{ define "main" }}
+
+
+<h1>Arshad Nadeem</h1>
+<div class="special">
+
+    <div class="item">
+<img src="/AN.jpg" alt="arshad nadeem">
+</div>
+<div class="item">
+<p>
+    Arshad Nadeem is a Pakistani javelin thrower. He is the reigning Olympic and Commonwealth Games champion. He is also the current silver medalist in the World Athletics Championship. He set an Olympic record with a throw of 92.97 metres (305.0 ft) at the 2024 Summer Olympics.
+
+    He is a two-time Olympian, and the first Pakistani to qualify for the final of any track and field event at the Olympic Games  and the World Athletics Championships.
+    
+    <br/>
+    <br/>
+    The purpose of this site is to celebrate and document the incredible achievements of Arshad Nadeem. By meticulously tracking and showcasing the various gifts, cash prizes, and honors he has received, the site aims to highlight his journey and the national pride he has inspired. It serves as a platform for fans and supporters to engage, share their congratulations, and stay updated on Arshad's ongoing legacy.
+</p>
+</div>
+</div>
+
+<h1>GIFT COUNTER</h1>
+<div class="donate-container">
+
+    <div class="card">
+        <div class="overlay"></div>
+        <div class="content">
+            <p>number of verified gifts:</p>
+<h2 class="counter lg-text" data-target="19">0</h2>
+</div>
+</div>
+
+<div class="card">
+    <div class="overlay"></div>
+    <div class="content">
+        <p>Total Cash Gifted in PKR:</p>
+<h2 class="counter lg-text" data-target="473535000">0</h2>
+</div>
+</div>
+
+<div class="card donate">
+    <div class="overlay"></div>
+
+    <div class="content">
+        <h2>Donations:  03216512425</h2>
+        <p class="custom">donation keeps the site alive</p>
+    </div>
+</div>
+</div>
+
+
+<!-- <br/> -->
+
+<!-- <h1>Latest posts</h1>
+
+<div class="posts-list">
+{{ with .Site.GetPage "/posts" }}
+    {{ range first 3 (sort .Data.Pages "Date" "desc" (where .Pages ".Params.private" "!=" true))}}
+        <div class="post">
+            <p>
+                <div class="date">{{ .PublishDate.Format "Jan. 2, 2006" }}</div>
+                <h1><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h1>
+                {{ .Summary }}
+            </p>
+        </div>    
+    {{ end }}
+{{ end }}
+</div> -->
+
+<h1>GIFTS ANNOUNCEMENTS</h1>
+
+<div class="image-grid">
+
+{{ with .Site.GetPage "/photos" }}
+    {{ range (sort .Data.Pages "Date" "desc") }}
+        <a href="{{ .Permalink }}" title="{{ .Title }}">
+        {{ $image := .Page.Resources.GetMatch .Params.image }}
+        {{ with $image }}
+            {{ $thumb := .Resize "400x" }}
+            <img src="{{ $thumb.RelPermalink }}" alt="{{ .Title }}" class="img-responsive" data-filename="{{ .Name }}">
+        {{ else }}
+            <script>console.log("Image not found for {{ .Title }}");</script>
+        {{ end }}
+        </a>
+    {{ end }}
+{{ end }}
+
+
+</div>
+
+<div class="donate-container">
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const counters = document.querySelectorAll('.counter');
+    const speed = 1000; // The lower the number, the faster the count
+
+    counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+
+            // Lower increment to make the animation smoother
+            const increment = target / speed;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(updateCount, 1);
+            } else {
+                counter.innerText = target;
+            }
+        };
+
+        updateCount();
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('img[data-filename]');
+    images.forEach(img => {
+        console.log(img.getAttribute('data-filename'));
+    });
+});
+
+    
+});
+
+
+
+
+
+
+
+</script>
+
+{{ end }}
