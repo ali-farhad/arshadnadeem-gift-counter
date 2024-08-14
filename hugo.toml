@@ -2,3 +2,6 @@ baseURL = 'https://arshadnadeem.gifts'
 languageCode = 'en-us'
 title = 'Arshad Nadeem Gift Counter'
 theme = "hugo-theme-console"
+
+[security.funcs]
+getenv = ['^HUGO_', '^CI$', '^DEPLOYMENT_TIME$']
